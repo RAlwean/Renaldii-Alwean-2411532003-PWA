@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Website Navy</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#001f3f">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="container">
+    <h1>Selamat Datang di Website Saya</h1>
+    <p>Website ini dibikin untuk perkuliahan Desain Web.
+Dibuat dengan struktur dasar HTML dan CSS.</p>
+  
+  <p>Website ini kini telah ditingkatkan menjadi <b>Progressive Web App (PWA)</b> yang dapat diinstal ke perangkat dan digunakan meskipun tanpa koneksi internet.</p>
+  <button id="installButton" style="display:none;margin-top:20px;padding:10px;border-radius:8px;background:#001f3f;color:#fff;border:none;cursor:pointer;">Install Aplikasi</button>
+</div>
+
+<script>
+  // Service worker registration
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function() {
+      navigator.serviceWorker.register("service-worker.js")
+      .then(()=>console.log('Service Worker registered'))
+      .catch(e=>console.log('SW registration failed', error));
+    });
+  }
+
+  // Install prompt
+  let deferredPrompt;
+  const installButton = document.getElementById('installButton');
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installButton.style.display = 'inline-block';
+  });
+  installButton.addEventListener('click', async () => {
+    installButton.style.display = 'none';
+    deferredPrompt.prompt();
+    const choice = await deferredPrompt.userChoice;
+    deferredPrompt = null;
+  });
+</script>
+</body>
+
+</html>

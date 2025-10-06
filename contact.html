@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Website Navy</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#001f3f">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="container">
+    <h1>Hubungi Saya</h1>
+<form onsubmit="handleSubmit(event)">
+  <label for="nama">Nama:</label>
+  <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+
+  <label for="kategori">Kategori Pesan:</label>
+  <select id="kategori" name="kategori" required>
+    <option value="">-- Pilih Kategori --</option>
+    <option value="pertanyaan">Pertanyaan</option>
+    <option value="saran">Saran</option>
+    <option value="masalah">Masalah</option>
+  </select>
+
+  <label for="pesan">Pesan:</label>
+  <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda..." required></textarea>
+
+  <label>Ingin menerima balasan?</label>
+<div class="radio-group">
+  <label><input type="radio" name="balasan" value="ya" required> Ya</label>
+  <label><input type="radio" name="balasan" value="tidak"> Tidak</label>
+</div>
+
+
+  <button type="submit">Kirim Pesan</button>
+</form>
+
+<script>
+  function handleSubmit(event) {
+    event.preventDefault();
+    alert("Form berhasil dikirim!");
+  }
+</script>
+    <h1>Kontak</h1>
+    <p>Email: Weyangeming@gmail.com</p>
+    <p>Telepon: 0852-6310-7047</p>
+    <p>Instagram: @weansylnnt</p>
+  </div>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function() {
+      navigator.serviceWorker.register("service-worker.js").then(()=>console.log("Service Worker terdaftar")).catch(err=>console.log("Pendaftaran gagal:", err));
+    });
+  }
+</script>
+</body>
+</html>

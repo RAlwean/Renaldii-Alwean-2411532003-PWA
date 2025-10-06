@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Website Navy</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#001f3f">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="container">
+    <h1>Tentang Saya</h1>
+    <p>Halo, saya <b>RENALDI ALWEAN SAPUTRA</b> dari <b>UNIVERSITAS ANDALAS Prodi INFORMATIKA</b>. 
+  .</p>
+    <p></p>
+  </div>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function() {
+      navigator.serviceWorker.register("service-worker.js").then(()=>console.log("Service Worker terdaftar")).catch(err=>console.log("Pendaftaran gagal:", err));
+    });
+  }
+</script>
+</body>
+</html>

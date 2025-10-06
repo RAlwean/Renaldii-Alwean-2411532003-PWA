@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+nav {
+  background: rgba(0, 31, 63, 0.9);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #00aaff;
+}
+
+.container {
+  max-width: 900px;
+  margin: 60px auto;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  color: #001f3f;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #001f3f;
+}
+
+input, select, textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #0074D9;
+  box-shadow: 0 0 5px rgba(0,116,217,0.5);
+}
+.radio-group {
+  display: flex;
+  gap: 25px; 
+  margin: 10px 0 20px 0;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+  font-weight: normal;
+}
+
+
+button {
+  background-color: #001f3f;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #0074D9;
+}
+
+/* PWA install button style */
+#installButton{background:#001f3f;color:#fff;padding:10px;border-radius:8px;border:none;cursor:pointer}
